@@ -1,4 +1,4 @@
-# AuraFinance Credit Scoring Model
+# Fintech Credit Scoring Model
 
 ## Overview
 A Flask-based API for predicting credit risk, inspired by Nigeria's informal economy and NGX data. Built as part of my transition from architecture (ESUT B.Sc. 2020) to AI, leveraging Google PM certs (2024).
