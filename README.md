@@ -1,47 +1,21 @@
-`Overview`
+# AuraFinance Credit Scoring Model
 
-This project develops a credit scoring model using Logistic Regression to predict loan defaults, leveraging a Kaggle dataset ("Credit Risk Dataset"). Achieving a 0.76 accuracy on both cross-validation and test sets, it demonstrates robust generalization for fintech applications, such as in Nigeria's informal economy.
+## Overview
+A Flask-based API for predicting credit risk, inspired by Nigeria's informal economy and NGX data. Built as part of my transition from architecture (ESUT B.Sc. 2020) to AI, leveraging Google PM certs (2024).
 
-`Methodology`
+## Tech Stack
+- Python, Pandas, Scikit-learn
+- Flask/Waitress for API
+- Logistic Regression with SMOTE for balanced prediction
 
-`Data Preprocessing:` Handled missing values with mean imputation and encoded categorical variables (e.g., 'person_home_ownership', 'loan_intent') using one-hot encoding.
+## Setup
+1. Install Python 3.13 and dependencies: `pip install -r requirements.txt` (create this file with `flask`, `pandas`, `scikit-learn`, `waitress`, `joblib`).
+2. Run `python save_model.py` to generate model files.
+3. Start the server: `python -m waitress --host=0.0.0.0 --port=5000 app:app`
+4. Test with `python appfix.py`
 
-`Class Imbalance:` Applied SMOTE (Synthetic Minority Over-sampling Technique) to balance the minority 'default' class, ensuring the model learns from both repaid and defaulted loans effectively.
+## Results
+Example prediction: `{'default_prediction': 0, 'default_probability': 0.3888976687157056}`
 
-`Modeling:` Used Logistic Regression with class_weight='balanced' for fair prediction, achieving stable 0.76 accuracy.
-
-`Feature Importance:` Visualized coefficients to identify key predictors like 'loan_int_rate' and 'person_income'.
-
-`Results`
-
-Accuracy: 0.76 (CV: 0.76 ± 0.00, Test: 0.76), indicating strong performance.
-Visualization: Plots show feature importance and the trend of default probability vs. income, aiding interpretable decision-making.
-
-`Design Thinking Approach (Architecture Background)`
-
-Drawing from my B.Sc. in Architecture (Enugu State University of Science and Technology, 2020), I applied design thinking by iteratively refining the model architecture. Just as architectural designs balance aesthetics and functionality, this model balances accuracy and interpretability, using feature importance to guide feature selection—mirroring structural optimization in building design.
-
-`Project Management (Google PM Skills)`
-
-Utilizing skills from my Google Project Management certification, I structured the project with clear milestones: data loading, preprocessing, modeling, and deployment. This ensured efficient resource use (e.g., Kaggle data) and timely delivery, aligning with PM principles of scope, time, and quality management.
-
-`Next Steps`
-
-Deployed via Flask for real-time prediction.
-Shared on GitHub for portfolio visibility.
-
-`Usage`
-
-Clone the repository.
-
-Install dependencies: pip install -r requirements.txt.
-
-Run the Flask app: python app.py.
-
-Access via http://localhost:5000/predict with JSON input.
-
-`Acknowledgments`
-
-Kaggle community for the dataset.
-
-xAI for guidance in model development.
+## Personal Note
+My architecture background influenced feature design, while PM skills ensured project delivery.
